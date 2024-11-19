@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/XIU2/CloudflareSpeedTest/utils"
+	"github.com/ilip/CloudflareSpeedTest/utils"
 )
 
 const (
@@ -31,7 +31,7 @@ type Ping struct {
 	ips     []*net.IPAddr
 	csv     utils.PingDelaySet
 	control chan bool
-	bar     *utils.Bar
+	bar     utils.Progress
 }
 
 func checkPingDefault() {
@@ -46,7 +46,7 @@ func checkPingDefault() {
 	}
 }
 
-func NewPing() *Ping {
+func NewPing(progress utils.Progress) *Ping {
 	checkPingDefault()
 	ips := loadIPRanges()
 	return &Ping{
@@ -55,7 +55,7 @@ func NewPing() *Ping {
 		ips:     ips,
 		csv:     make(utils.PingDelaySet, 0),
 		control: make(chan bool, Routines),
-		bar:     utils.NewBar(len(ips), "可用:", ""),
+		bar:     progress,
 	}
 }
 
@@ -63,6 +63,10 @@ func (p *Ping) Run() utils.PingDelaySet {
 	if len(p.ips) == 0 {
 		return p.csv
 	}
+	if p.bar == nil {
+		p.bar = utils.NewBar(len(p.ips), "可用:", "")
+	}
+	p.bar.SetTotal(len(p.ips))
 	if Httping {
 		fmt.Printf("开始延迟测速（模式：HTTP, 端口：%d, 范围：%v ~ %v ms, 丢包：%.2f)\n", TCPPort, utils.InputMinDelay.Milliseconds(), utils.InputMaxDelay.Milliseconds(), utils.InputMaxLossRate)
 	} else {

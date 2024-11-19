@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/XIU2/CloudflareSpeedTest/utils"
+	"github.com/ilip/CloudflareSpeedTest/utils"
 
 	"github.com/VividCortex/ewma"
 )
@@ -48,7 +48,7 @@ func checkDownloadDefault() {
 	}
 }
 
-func TestDownloadSpeed(ipSet utils.PingDelaySet) (speedSet utils.DownloadSpeedSet) {
+func TestDownloadSpeed(ipSet utils.PingDelaySet, progress utils.Progress) (speedSet utils.DownloadSpeedSet) {
 	checkDownloadDefault()
 	if Disable {
 		return utils.DownloadSpeedSet(ipSet)
@@ -69,10 +69,16 @@ func TestDownloadSpeed(ipSet utils.PingDelaySet) (speedSet utils.DownloadSpeedSe
 	// 控制 下载测速进度条 与 延迟测速进度条 长度一致（强迫症）
 	bar_a := len(strconv.Itoa(len(ipSet)))
 	bar_b := "     "
+	var bar utils.Progress
 	for i := 0; i < bar_a; i++ {
 		bar_b += " "
 	}
-	bar := utils.NewBar(TestCount, bar_b, "")
+	if progress == nil {
+		bar = utils.NewBar(TestCount, bar_b, "")
+	} else {
+		bar = progress
+	}
+	bar.SetTotal(TestCount)
 	for i := 0; i < testNum; i++ {
 		speed := downloadHandler(ipSet[i].IP)
 		ipSet[i].DownloadSpeed = speed

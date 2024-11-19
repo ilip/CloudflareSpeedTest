@@ -12,7 +12,7 @@
 
 总的来说，我写的这几个脚本都比较简单，功能也很单一，除了满足部分用户的需求外，***更像是一个 CloudflareST 与脚本搭配使用的示例参考***，对于一些会写脚本、软件的用户来说，完全可以**自给自足**来实现一些个性化需求。
 
-当然，如果你有一些自用好用的脚本也可以通过 [**Issues**](https://github.com/XIU2/CloudflareSpeedTest/issues)、[**Discussions**](https://github.com/XIU2/CloudflareSpeedTest/discussions) 或 **Pull requests** 发给我添加到这里让更多人用到！
+当然，如果你有一些自用好用的脚本也可以通过 [**Issues**](https://github.com/ilip/CloudflareSpeedTest/issues)、[**Discussions**](https://github.com/ilip/CloudflareSpeedTest/discussions) 或 **Pull requests** 发给我添加到这里让更多人用到！
 
 > 小提示：点击↗右上角的三横杠图标按钮即可查看目录~
 
@@ -22,7 +22,7 @@
 脚本会运行 CloudflareST 获得最快 IP，并替换掉 Hosts 文件中的旧 CDN IP。
 
 > **作者：**[@XIU2](https://github.com/xiu2)  
-> **使用说明/问题反馈：https://github.com/XIU2/CloudflareSpeedTest/discussions/312**
+> **使用说明/问题反馈：https://github.com/ilip/CloudflareSpeedTest/discussions/312**
 
 <details>
 <summary><code><strong>「 更新日志」</strong></code></summary>
@@ -55,7 +55,7 @@
 可以把所有 Cloudflare CDN IP 都重定向至最快 IP，实现一劳永逸的加速所有使用 Cloudflare CDN 的网站（不需要一个个添加域名到 Hosts 了）。
 
 > **作者：**[@XIU2](https://github.com/xiu2)  
-> **使用说明/问题反馈：https://github.com/XIU2/CloudflareSpeedTest/discussions/71**
+> **使用说明/问题反馈：https://github.com/ilip/CloudflareSpeedTest/discussions/71**
 
 <details>
 <summary><code><strong>「 更新日志」</strong></code></summary>
@@ -91,7 +91,7 @@
 脚本会运行 CloudflareST 测速获得最快 IP，并通过 Cloudflare API 来更新域名解析记录为这个最快 IP。
 
 > **作者：**[@imashen](https://github.com/imashen)  
-> **使用说明/问题反馈：https://github.com/XIU2/CloudflareSpeedTest/pull/533**
+> **使用说明/问题反馈：https://github.com/ilip/CloudflareSpeedTest/pull/533**
 
 <details>
 <summary><code><strong>「 更新日志」</strong></code></summary>
@@ -111,7 +111,7 @@
 脚本会运行 CloudflareST 测速获得最快 IP，并通过 Cloudflare API 来更新域名解析记录为这个最快 IP。
 
 > **作者：**[@XIU2](https://github.com/xiu2)  
-> **使用说明/问题反馈：https://github.com/XIU2/CloudflareSpeedTest/discussions/481**
+> **使用说明/问题反馈：https://github.com/ilip/CloudflareSpeedTest/discussions/481**
 
 <details>
 <summary><code><strong>「 更新日志」</strong></code></summary>

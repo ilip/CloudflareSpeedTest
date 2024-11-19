@@ -5,14 +5,14 @@ export PATH
 #	项目: CloudflareSpeedTest 自动更新 Hosts
 #	版本: 1.0.4
 #	作者: XIU2
-#	项目: https://github.com/XIU2/CloudflareSpeedTest
+#	项目: https://github.com/ilip/CloudflareSpeedTest
 # --------------------------------------------------------------
 
 _CHECK() {
 	while true
 		do
 		if [[ ! -e "nowip_hosts.txt" ]]; then
-			echo -e "该脚本的作用为 CloudflareST 测速后获取最快 IP 并替换 Hosts 中的 Cloudflare CDN IP。\n使用前请先阅读：https://github.com/XIU2/CloudflareSpeedTest/issues/42#issuecomment-768273848"
+			echo -e "该脚本的作用为 CloudflareST 测速后获取最快 IP 并替换 Hosts 中的 Cloudflare CDN IP。\n使用前请先阅读：https://github.com/ilip/CloudflareSpeedTest/issues/42#issuecomment-768273848"
 			echo -e "第一次使用，请先将 Hosts 中所有 Cloudflare CDN IP 统一改为一个 IP。"
 			read -e -p "输入该 Cloudflare CDN IP 并回车（后续不再需要该步骤）：" NOWIP
 			if [[ ! -z "${NOWIP}" ]]; then

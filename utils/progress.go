@@ -23,3 +23,6 @@ func (b *Bar) Grow(num int, MyStrVal string) {
 func (b *Bar) Done() {
 	b.pb.Finish()
 }
+
+func (b *Bar) SetTotal(total int) {
+}

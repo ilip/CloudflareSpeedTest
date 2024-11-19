@@ -2,7 +2,7 @@
 ::	项目: CloudflareSpeedTest 自动更新域名解析记录
 ::	版本: 1.0.5
 ::	作者: XIU2
-::	项目: https://github.com/XIU2/CloudflareSpeedTest
+::	项目: https://github.com/ilip/CloudflareSpeedTest
 :: --------------------------------------------------------------
 @echo off
 Setlocal Enabledelayedexpansion
